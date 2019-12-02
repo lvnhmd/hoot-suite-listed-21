@@ -1,0 +1,42 @@
+{
+  "name": "hoot-suite-listed-21",
+  "version": "1.0.0",
+  "description": "Schedule content on the HootSuite calendar programmatically",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvnhmd/hoot-suite-listed-21.git"
+  },
+  "keywords": [
+    "content",
+    "hootsuite",
+    "listed21",
+    "free",
+    "competitions",
+    "promotions",
+    "instagram"
+  ],
+  "author": "elvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lvnhmd/hoot-suite-listed-21/issues"
+  },
+  "homepage": "https://github.com/lvnhmd/hoot-suite-listed-21#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "dateformat": "^3.0.3",
+    "dotenv": "^8.2.0",
+    "image-downloader": "^3.5.0",
+    "mongoose": "^5.7.13",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
+  }
+}
