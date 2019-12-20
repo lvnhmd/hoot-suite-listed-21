@@ -37,6 +37,8 @@
     "dotenv": "^8.2.0",
     "image-downloader": "^3.5.0",
     "mongoose": "^5.7.13",
+    "node-emoji": "^1.10.0",
+    "puppeteer": "^2.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.5"
   }

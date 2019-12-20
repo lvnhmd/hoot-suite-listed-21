@@ -29,3 +29,43 @@ exports.schedule = (data) => {
       console.log(e);
     });
 };
+
+// if you want to use it , put it in index where it says /* Hoot-suite functionality */
+
+// promos.forEach((promo) => {
+//   const imageSize = fs.statSync(promo.img).size;
+//   console.log('Image size ', imageSize);
+
+//   Promise.resolve(createMediaUploadURL(fs.statSync(promo.img).size)).then((result) => {
+//     console.log('Create media upload url ', result.body.data);
+//     const { uploadUrl, id } = result.body.data;
+//     // TODO promisify uploadMeadia and schedule
+//     // generate time , each promo after 10 min or something
+//     // implement auth
+//     // add tags , emojis ? and link in bio
+//     request({
+//       method: 'PUT',
+//       headers: {
+//         'Content-Type': 'image/jpeg',
+//         'Content-Length': imageSize,
+//       },
+//       url: uploadUrl,
+//       body: fs.createReadStream(promo.img),
+//     },
+//     // eslint-disable-next-line consistent-return
+//     (error, response) => {
+//       console.log('Upload successful!  Server responded with:', response.statusCode);
+
+//       setTimeout(() => schedule({
+//         // text: emoji.emojify(`${promo.title} :arrow_up link in bio ${promo.url}`),
+//         text: `${promo.title} :arrow_up link in bio ${promo.url}`,
+//         scheduledSendTime: '2019-12-13T23:50:00Z',
+//         media: [
+//           {
+//             id,
+//           },
+//         ],
+//       }), 1500); // give it a sec so the id can propagate through hs system
+//     });
+//   });
+// });

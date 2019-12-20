@@ -4,10 +4,12 @@ const download = require('image-downloader');
 const dateFormat = require('dateformat');
 const fs = require('fs');
 const mongoose = require('mongoose');
-const request = require('request');
+// const request = require('request');
+// const emoji = require('node-emoji');
 const { createPromotion, getPromotion } = require('./models/Promotion');
 const crawler = require('./src/crawler');
-const { createMediaUploadURL, schedule } = require('./hs');
+// const { createMediaUploadURL, schedule } = require('./hs');
+const { schedule } = require('./puppeteer');
 require('dotenv').config({ path: './.env' });
 
 const regexp = /([A-Z0-9_-]{1,}\.(?:png|jpg|gif|jpeg))/i;
@@ -40,36 +42,6 @@ const scrape = () => Promise.resolve(crawler.crawl()).then((promos) => {
 
 Promise.resolve(scrape()).then((promos) => {
   console.log('* New promotions * ', promos);
-  promos.forEach((promo) => {
-    const imageSize = fs.statSync(promo.img).size;
-    console.log('Image size ', imageSize);
-
-    Promise.resolve(createMediaUploadURL(fs.statSync(promo.img).size)).then((result) => {
-      console.log('Create media upload url ', result.body.data);
-      const { uploadUrl, id } = result.body.data;
-      request({
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'image/jpeg',
-          'Content-Length': imageSize,
-        },
-        url: uploadUrl,
-        body: fs.createReadStream(promo.img),
-      },
-      // eslint-disable-next-line consistent-return
-      (error, response) => {
-        console.log('Upload successful!  Server responded with:', response.statusCode);
-
-        setTimeout(() => schedule({
-          text: promo.title,
-          scheduledSendTime: '2019-12-13T23:50:00Z',
-          media: [
-            {
-              id,
-            },
-          ],
-        }), 1500); // give it a sec so the id can propagate through hs system
-      });
-    });
-  });
+  /* Placeholder: Hoot-suite functionality */
+  return schedule();
 });
