@@ -31,15 +31,19 @@
     "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
+    "bunyan": "^1.8.12",
+    "bunyan-prettystream": "^0.1.3",
     "cheerio": "^1.0.0-rc.3",
     "curl-request": "^1.1.1",
     "dateformat": "^3.0.3",
     "dotenv": "^8.2.0",
     "image-downloader": "^3.5.0",
+    "moment": "^2.24.0",
     "mongoose": "^5.7.13",
     "node-emoji": "^1.10.0",
     "puppeteer": "^2.0.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.5",
+    "simplecrawler": "^1.1.8"
   }
 }

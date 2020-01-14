@@ -16,5 +16,6 @@ exports.createPromotion = (data) => Promotion.create(data)
   .catch((err) => Promise.reject(err));
 
 exports.getPromotion = (param) => Promotion.findOne({ url: param })
-  .then((doc) => Promise.resolve(doc))
+  // .then((doc) => Promise.resolve(doc))
+  .then((doc) => doc)
   .catch((err) => Promise.reject(err));
