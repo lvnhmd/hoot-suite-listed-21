@@ -80,6 +80,7 @@ const scrapePage = (url, promises) => new Promise((resolve, reject) => {
   rp(url)
     .then((html) => {
       // extract the last page number
+      // eslint-disable-next-line max-len
       const last = 16;// parseInt($('li.last > a', html)['0'].attribs.href.match(/\d+/)[0].trim(), 10);
       const next = parseInt($('li.next > a', html)['0'].attribs.href.match(/\d+/)[0].trim(), 10);
 

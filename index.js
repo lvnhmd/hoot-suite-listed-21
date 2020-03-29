@@ -4,17 +4,14 @@ const download = require('image-downloader');
 const dateFormat = require('dateformat');
 const fs = require('fs');
 const mongoose = require('mongoose');
-// const request = require('request');
 const emoji = require('node-emoji');
-// const { createPromotion, getPromotion } = require('./models/Promotion');
 const { createPost, getPost } = require('./models/Post');
-const crawler = require('./src/crawler');
-// const { createMediaUploadURL, schedule } = require('./hs');
 const { schedule } = require('./puppeteer');
 require('dotenv').config({ path: './.env' });
 
 const regexp = /([A-Z0-9_-]{1,}\.(?:png|jpg|gif|jpeg))/i;
 const start = new Date();
+// eslint-disable-next-line no-eval
 const scrape = (pub) => Promise.resolve(eval(`crawler.crawl${pub}()`)).then((promos) => promos);
 
 const filterOutExistingPosts = (promos) => {
